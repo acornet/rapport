@@ -285,51 +285,51 @@ Ce besoin est justifié par la forte croissance du nombre d'utilisateurs d'IB, q
 		\subsubsection{Objectifs}
 L'équipe dispose actuellement de tests, dit unitaires, permettant de garantir le bon fonctionnement des sous-composants d'IB Publisher. En revanche, elle ne dispose pas de tests, dit d'intégration, permettant de prouver qu'une fois assemblés, ses sous-composants remplissent le cahier des charges de l'application.
 
-Une des réalités de l'ingénierie logicielle est que nombre de développeurs sont réticents à écrire des tests. Cela s'explique sans doute par le fait que ces tests ne contribuent pas directement à l'expérience de l'utilisateur. Ils ne sont donc pas toujours considérés comme une partie intégrante du travail à réaliser et certains développeurs sous-entendent qu'écrire des tests ne font que les ralentir dans leur travail.
+Une des réalités de l'ingénierie logicielle est que nombre de développeurs sont réticents à écrire des tests. Cela s'explique sans doute par le fait que ces tests ne contribuent pas directement à l'expérience de l'utilisateur. Ils ne sont donc pas toujours considérés comme une partie intégrante du travail à réaliser et certains développeurs sous-entendent qu'écrire des tests ne fait que les ralentir dans leur travail.
 
 Ces tests, unitaires ou d'intégration, sont pourtant essentiels dans un processus agile de développement. Ils permettent de développer itérativement les applications tout en assurant le bon fonctionnement des produits à toutes les étapes de la production. Ils garantissent en particulier le support des anciennes versions de l'application.
 \\
 
 Mon projet consistait donc en la création d'un environnement de tests d'intégration pour IB Publisher. Cet environnement devait tout d'abord garantir que les résultats des tests seraient le fait d'IB Publisher uniquement, et pas d'autres sous-composants. Pour cela, je devais isoler IB Publisher du reste de l'application, en créant des \textit{mocks} (i.e. des faux) reproduisant le comportement des autres sous-composants connectés à IB Publisher. Cette tache m'a occupé pendant les premières semaines de mon stage.
 
-Je me suis ensuite consacré au développement du testeur en lui même. Cette application devait être capable d'envoyer des messages puis de vérifier que les résultats obtenus dans les tables étaient conformes au cahier des charges d'IB Publisher.
+Je me suis ensuite consacré au développement du testeur en lui-même. Cette application devait être capable d'envoyer des messages puis de vérifier que les résultats obtenus dans les tables étaient conformes au cahier des charges d'IB Publisher.
 		\subsubsection{Déroulement}
 Lors de ma première semaine, mon tuteur était absent ce qui m'a laissé le temps d'apprendre les bases du C++. J'allais devoir utiliser ce langage de programmation dans la première partie de mon travail et il m'était inconnu à mon arrivée. Je me suis également familiarisé avec le fonctionnement d'IB et plus particulièrement d'IB Publisher et du gestionnaire de version. Ce gestionnaire sera appelé IB Version dans la suite de ce rapport.
 
-La découverte de certaines parties du code a été déboussolante. Je n'étais en effet familier ni du langage, ni des conventions et des librairies utilisés. Je devais pourtant analyser le code d'IB Version afin d'en créer un copie simplifiée. L'équipe était très occupée cette semaine ci et ne disposait que de peu de temps pour m'aider à démarrer mon travail. J'ai alors du faire face à une sorte d'angoisse de la feuille blanche et je tardais à décider par où commencer.
+La découverte de certaines parties du code a été déboussolante. Je n'étais en effet familier ni du langage, ni des conventions et des librairies utilisés. Je devais pourtant analyser le code d'IB Version afin d'en créer une copie simplifiée. L'équipe était très occupée cette semaine ci et ne disposait que de peu de temps pour m'aider à démarrer mon travail. J'ai alors du faire face à une sorte d'angoisse de la feuille blanche et je tardais à décider par où commencer.
 \\
 
-Au retour de mon tuteur, nous avons pu décider de l'architecture de mon projet et j'ai alors réellement démarré mon travail. Nous avons choisi de commencer par créer une reproduction simplifiée d'IB Version. La copie serait basée sur une technologie interne à Bloomberg, très utilisée par les développeurs. Cette technologie offre la possibilité à deux applications de communiquer très facilement et permettra donc d'assurer la connexion entre le testeur et le mock IB Version.
+Au retour de mon tuteur, nous avons pu décider de l'architecture de mon projet et j'ai alors réellement démarré mon travail. Nous avons choisi de commencer par créer une reproduction simplifiée d'IB Version. La copie serait basée sur une technologie interne à Bloomberg, très utilisée par les développeurs. Cette technologie offre la possibilité à deux applications de communiquer très facilement et a donc permis d'assurer la connexion entre le testeur et le mock IB Version.
 
-Cette technologie m'était tout a fait inconnue et étant interne à Bloomberg, je ne pouvais pas m'aider d'internet pour l'utiliser. Toute la semaine a donc été une lutte sur le plan technique pour parvenir à poser les fondations du mock IB Version.
+Cette technologie m'était tout à fait inconnue et étant interne à Bloomberg, je ne pouvais pas m'aider d'internet pour l'utiliser. Toute la semaine a donc été une lutte sur le plan technique pour parvenir à poser les fondations du mock IB Version.
 
 La semaine suivante marquait le coup d'envoi du Summer Internship Program et était donc entièrement consacrée à des formations sur les outils et technologies utilisées à Bloomberg. Je m'absentais ensuite dix jours pour participer aux répétitions du 14 Juillet.
 \\
 
-À mon retour, j'ai réellement pu ressentir la plus value apportée par la formation et j'ai ainsi fait de rapide progrès sur la configuration initiale de mock IB Version. J'ai ensuite travaillé une semaine dans le but d'établir une connexion stable entre mock IB Version et IB Publisher.
+À mon retour, j'ai réellement pu ressentir la plus value apportée par la formation et j'ai ainsi fait de rapides progrès sur la configuration initiale de mock IB Version. J'ai ensuite travaillé une semaine dans le but d'établir une connexion stable entre mock IB Version et IB Publisher.
 
-Une fois ce travail terminé, je disposais des outils nécessaires pour démarrer la seconde phase de mon projet: le développement du testeur. Celui ci enverrait des messages à mock IB Version, qui les transmettra à IB Publisher.
+Une fois ce travail terminé, je disposais des outils nécessaires pour démarrer la seconde phase de mon projet: le développement du testeur. Celui-ci enverrait des messages à mock IB Version, qui les transmettra à IB Publisher.
 \\
 
-La seconde partie de mon travail a été bien plus intéressante et enrichissante. Pour gagner en agilité, mon tuteur et moi-meme avons en effet choisi de développer le testeur dans le langage Python. Ce langage est très facile d'accès et est largement utilisé ce qui fait d'Internet un outil puissant pour résoudre de nombreux problèmes. Ainsi, j'étais libéré des contraintes techniques que j'avais connues jusqu'alors et je pouvais réellement me concentrer sur le fond de mon travail.
+La seconde partie de mon travail a été bien plus intéressante et enrichissante. Pour gagner en agilité, mon tuteur et moi-même avons en effet choisi de développer le testeur dans le langage Python. Ce langage est très facile d'accès et est largement utilisé ce qui fait d'Internet un outil puissant pour résoudre de nombreux problèmes. Ainsi, j'étais libéré des contraintes techniques que j'avais connues jusqu'alors et je pouvais réellement me concentrer sur le fond de mon travail.
 \\
-Mon tuteur et moi-même avons alors travaillé dans le but de créer une première version du testeur en portant une attention particulière à la clarté et à la qualité de l'architecture adoptée. Cet effort s'explique par le fait que mon travail devait être le plus simple possible à reprendre par le reste de l'équipe. Il s'agissait également d'un enjeux \og politique \fg{} pour mon tuteur qui souhaitait ainsi montrer au reste de l'équipe la nécessité de faire plus d'effort sur ce point.
+Mon tuteur et moi-même avons alors travaillé dans le but de créer une première version du testeur en portant une attention particulière à la clarté et à la qualité de l'architecture adoptée. Cet effort s'explique par le fait que mon travail devait être le plus simple possible à reprendre par le reste de l'équipe. Il s'agissait également d'un enjeu \og politique \fg{} pour mon tuteur qui souhaitait ainsi montrer au reste de l'équipe la nécessité de faire plus d'efforts sur ce point.
 
 J'ai alors vraiment eu l'impression de pouvoir utiliser mes connaissances et mes qualités d'abstraction. Après deux semaines environ, je disposais d'une première version fonctionnelle du testeur.
 \\
 
-Mon ambition était ensuite de permettre aux développeurs de l'équipe d'écrire des tests sans avoir à écrire de code. Dans le temps qu'il me restait, j'ai donc développé une interface leur permettant de spécifier simultanément les messages faisait l'objet d'un test et les exigences pour les résultats de ces messages.
+Mon ambition était ensuite de permettre aux développeurs de l'équipe d'écrire des tests sans avoir à écrire de code. Dans le temps qu'il me restait, j'ai donc développé une interface leur permettant de spécifier simultanément les messages faisant l'objet d'un test et les résultats attendus pour ces messages.
 		\subsubsection{Résultats et retours}
-Un grand nombre décisions relatives à l'orientation ou l'architecture du testeur ont été prises avec la participation de l'équipe toute entière. J'ai ainsi pu soumettre à plusieurs reprises mes réalisations et propositions à l'équipe et intégrer leurs avis et leurs besoins dans la suite de mon projet.
+Un grand nombre décisions relatives à l'orientation ou l'architecture du testeur ont été prises avec la participation de l'équipe tout entière. J'ai ainsi pu soumettre à plusieurs reprises mes réalisations et propositions à l'équipe et intégrer leurs avis et leurs besoins dans la suite de mon projet.
 
-Lors de mes derniers entretiens avec eux, mon tuteur et mon chef d'équipe m'ont communiqué toute leur satisfaction quant au travail que j'avais réalisé. Ils ont également souligné mes efforts pour m'adapter rapidement aux outils et à technologies utilisées dans l'environnement de travail.
+Lors de mes derniers entretiens avec eux, mon tuteur et mon chef d'équipe m'ont communiqué toute leur satisfaction quant au travail que j'avais réalisé. Ils ont également souligné mes efforts pour m'adapter rapidement aux outils et aux technologies utilisées dans l'environnement de travail.
 
 Le testeur sera prochainement intégré à l'environnement de production d'IB. Ainsi, il sera possible de vérifier quotidiennement que les modifications apportées à IB Publisher n'impactent pas négativement le fonctionnement de l'application.
 \\
 
-La semaine de mon départ, un mini-forum était organisé pour permettre aux stagiaires de R\&D de présenter leur travaux aux autres développeurs. Chacun d'entre nous pouvait ainsi présenter son projet de façon informelle.
+La semaine de mon départ, un mini-forum était organisé pour permettre aux stagiaires de R\&D de présenter leurs travaux aux autres développeurs. Chacun d'entre nous pouvait ainsi présenter son projet de façon informelle.
 
-J'ai alors réalisé que le problème que j'avais traité, à savoir tester une application publiant dans des tables sur le réseau, intéressait de nombreuses autres équipes. Plusieurs développeurs ont été très intéressés par le fonctionnement de mon projet et vont rentrer en contact avec mon tuteur pour pouvoir l'adapter à leurs besoins.
+J'ai alors réalisé que le problème que j'avais traité, à savoir tester une application publiant dans des tables sur le réseau, intéressait de nombreuses autres équipes. Plusieurs développeurs ont été très intéressés par le fonctionnement de mon application et vont rentrer en contact avec mon tuteur pour pouvoir l'adapter à leurs besoins.
 
 Ces retours très positifs ont bien entendu été très gratifiants après plusieurs semaines de travail.
 \newpage
