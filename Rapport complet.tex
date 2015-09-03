@@ -281,6 +281,12 @@ L'équipe a récemment livré la seconde version d'IB. La migration des 200,000 
 L'équipe doit cependant faire face à un petit nombre de clients qui refusent de passer à la nouvelle version car cela modifierait leur façon de travailler. Des efforts sont donc faits pour pouvoir recréer l'expérience utilisateur de IB1 dans IB2.
 
 De plus, l'équipe est en permanence sollicitée pour ajouter de nouvelles fonctionnalités ce qui rend difficile la restructuration et l'entretien du code existant. J'ai ici découvert un écueil de l'ingénierie logicielle: toujours donner la priorité à l'ajout de fonctionnalités aux dépens de la maintenance du code existant. L'architecture du code d'IB est en effet de moins en moins naturelle aux dires mêmes des membres de l'équipe, rendant toujours plus difficile de développer l'application. Il semble donc que la préférence pour le présent soit dommageable pour l'avenir de l'application, les nouvelles fonctionnalités demandant de plus en plus de temps pour être ajoutées.
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{IB.jpg}
+\caption{Cheminement des messages entres les différentes équipes}
+\end{center}
+\end{figure}
 		\subsubsection{IB2 Distribution}
 Au sein d'IB, l'équipe IB2 Distribution a pour rôle d'assurer la distribution des messages depuis le réseau global jusqu'aux utilisateurs. 
 \\
@@ -333,6 +339,12 @@ J'ai alors vraiment eu l'impression de pouvoir utiliser mes connaissances et mes
 \\
 
 Mon ambition était ensuite de permettre aux développeurs de l'équipe d'écrire des tests sans avoir à écrire de code. Dans le temps qu'il me restait, j'ai donc développé une interface leur permettant de spécifier simultanément les messages faisant l'objet d'un test et les résultats attendus pour ces messages.
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{testeur.jpg}
+\caption{Architecture de l'environnement de test}
+\end{center}
+\end{figure}
 		\subsubsection{Résultats et retours}
 Un grand nombre décisions relatives à l'orientation ou l'architecture du testeur ont été prises avec la participation de l'équipe tout entière. J'ai ainsi pu soumettre à plusieurs reprises mes réalisations et propositions à l'équipe et intégrer leurs avis et leurs besoins dans la suite de mon projet.
 
